@@ -5,7 +5,9 @@ import android.os.Bundle
 import androidx.fragment.app.FragmentActivity
 import com.suraj.nasagallery.databinding.ActivityMainBinding
 import com.suraj.nasagallery.ui.GalleryFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : FragmentActivity() {
 
     lateinit var binding: ActivityMainBinding
