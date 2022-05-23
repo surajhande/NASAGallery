@@ -25,19 +25,15 @@ class ImagesViewModel @Inject constructor(private val imageRepository: ImageRepo
     private val _imagesUiModel = MutableStateFlow(ImagesUiModel.Success() as ImagesUiModel)
     val imagesUiModel: StateFlow<ImagesUiModel> = _imagesUiModel
 
-    val isInfoVisible: MutableStateFlow<Boolean> = MutableStateFlow(true)
+    val isInfoVisible: MutableStateFlow<Boolean> = MutableStateFlow(false)
 
     private var imageList: ArrayList<ImageModel> = arrayListOf()
     var currentPosition = 0
 
-    init {
-        loadImagesFromJson()
-    }
-
     private fun loadImagesFromJson() = viewModelScope.launch {
         _imagesUiModel.value = ImagesUiModel.Loading
         withContext(Dispatchers.Default) {
-             val result = imageRepository.loadImagesFromJson()
+             val result = imageRepository.loadImageModelsFromJson()
              if (result.isEmpty())
                  _imagesUiModel.value = ImagesUiModel.Error
             else {

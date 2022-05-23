@@ -13,7 +13,7 @@ import java.lang.Exception
 import javax.inject.Inject
 
 interface ImageRepository {
-    suspend fun loadImagesFromJson(): ArrayList<ImageModel>
+    suspend fun loadImageModelsFromJson(): ArrayList<ImageModel>
 }
 
 class DefaultImageRepository @Inject constructor(
@@ -25,7 +25,7 @@ class DefaultImageRepository @Inject constructor(
         private const val JSON_FILE = "data.json"
     }
 
-    override suspend fun loadImagesFromJson(): ArrayList<ImageModel> {
+    override suspend fun loadImageModelsFromJson(): ArrayList<ImageModel> {
         var imageList: List<ImageModel>?
         withContext(Dispatchers.IO) {
             var jsonData = ""
