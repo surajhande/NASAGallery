@@ -7,6 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
@@ -17,11 +21,14 @@ import com.bumptech.glide.request.transition.Transition
 import com.suraj.nasagallery.R
 import com.suraj.nasagallery.data.ImageModel
 import com.suraj.nasagallery.databinding.FragmentImageBinding
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 class ImageFragment : Fragment() {
 
     private lateinit var binding: FragmentImageBinding
     private var imageModel: ImageModel = ImageModel()
+    val viewModel: ImagesViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,7 +80,23 @@ class ImageFragment : Fragment() {
                 }
                 override fun onLoadCleared(placeholder: Drawable?) { }
             })
+
+        binding.titleText.text = imageModel.title
+        binding.dateText.text = imageModel.date
+        binding.descText.text = imageModel.explanation
+        binding.copyrightText.text = imageModel.copyright
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.isInfoVisible.collect {
+                    binding.bottomLayout.visibility = if (it) View.VISIBLE else View.GONE
+                }
+            }
+        }
     }
 
     companion object {

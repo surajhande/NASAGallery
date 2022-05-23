@@ -1,19 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <com.ortiz.touchview.TouchImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@color/white"
         android:contentDescription="@string/image_by_nasa"
         android:scaleType="fitCenter" />
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/bottomLayout"
+        style="?attr/bottomSheetStyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_gravity="bottom"
+        android:theme="@style/InfoSheetTheme"
+        android:visibility="visible"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:layout_gravity="bottom"
+            android:background="@android:color/transparent"
+            android:orientation="vertical">
+
+
+
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@android:color/transparent"
+                android:text="Demo title text."
+                android:textAppearance="@style/Title"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/dateText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:background="@android:color/transparent"
+                android:text="10-4-2020"
+                android:textAppearance="@style/Title"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/copyrightText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:background="@android:color/transparent"
+                android:text="Copyright: Steve Mazlin"
+                android:textAppearance="@style/Title"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/descText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:background="@android:color/transparent"
+                android:lineSpacingExtra="4sp"
+                android:text="@string/lorem_ipsum"
+                android:textAppearance="@style/Title"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+    <!--        <LinearLayout-->
+<!--            android:id="@+id/layout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            android:gravity="bottom"-->
+<!--            android:padding="16dp"-->
+<!--            android:theme="@style/InfoSheetTheme"-->
+<!--            style="?attr/bottomSheetStyle"-->
+<!--            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/details"-->
+<!--                android:background="@android:color/transparent"-->
+<!--                android:textAppearance="@style/Heading" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/titleText"-->
+<!--                android:background="@android:color/transparent"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="14dp"-->
+<!--                android:text="Demo title text."-->
+<!--                android:textAppearance="@style/Title"-->
+<!--                android:textSize="20sp" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/dateText"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:background="@android:color/transparent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="6dp"-->
+<!--                android:text="10-4-2020"-->
+<!--                android:textAppearance="@style/Title"-->
+<!--                android:textSize="14sp" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/copyrightText"-->
+<!--                android:background="@android:color/transparent"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="6dp"-->
+<!--                android:text="Copyright: Steve Mazlin"-->
+<!--                android:textAppearance="@style/Title"-->
+<!--                android:textSize="14sp" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/descText"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:background="@android:color/transparent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="6dp"-->
+<!--                android:lineSpacingExtra="4sp"-->
+<!--                android:text="@string/lorem_ipsum"-->
+<!--                android:textAppearance="@style/Title"-->
+<!--                android:textSize="14sp" />-->
+<!--        </LinearLayout>-->
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 

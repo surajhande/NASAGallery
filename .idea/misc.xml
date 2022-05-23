@@ -3,11 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_download.xml" value="0.115" />
+        <entry key="app/src/main/res/drawable/outline_file_download_24.xml" value="0.115" />
+        <entry key="app/src/main/res/drawable/outline_hd_24.xml" value="0.115" />
+        <entry key="app/src/main/res/drawable/outline_info_24.xml" value="0.115" />
+        <entry key="app/src/main/res/drawable/outline_report_problem_24.xml" value="0.115" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3183876811594203" />
         <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_image.xml" value="0.125" />
-        <entry key="app/src/main/res/layout/fragment_image_viewer.xml" value="0.2756119673617407" />
+        <entry key="app/src/main/res/layout/fragment_image.xml" value="0.3039468383789063" />
+        <entry key="app/src/main/res/layout/fragment_image_viewer.xml" value="0.165" />
         <entry key="app/src/main/res/layout/item_thumbnail.xml" value="0.36614583333333334" />
+        <entry key="app/src/main/res/layout/layout_info_dialog.xml" value="0.2467270312477866" />
+        <entry key="app/src/main/res/menu/menu.xml" value="0.3026934587430526" />
       </map>
     </option>
   </component>

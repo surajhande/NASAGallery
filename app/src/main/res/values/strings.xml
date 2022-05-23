@@ -4,4 +4,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="lorem_ipsum">NASA\'s image library, images.nasa.gov, consolidates imagery and videos in one locations. Users can download content in multiple sizes and resolutions and see the metadata associated with images, including EXIF/camera data on many images.</string>
     <string name="image_by_nasa">Image by NASA</string>
+    <string name="info">Info</string>
+    <string name="download">Download</string>
+    <string name="about">About</string>
+    <string name="details">Details</string>
 </resources>
