@@ -1,12 +1,12 @@
 package com.suraj.nasagallery.data
 
+import android.os.Parcelable
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import kotlinx.parcelize.Parcelize
 
 
-@JsonClass(generateAdapter = true)
-data class ImagesFromJson(val list: List<ImageModel>)
-
+@Parcelize
 @JsonClass(generateAdapter = true)
 data class ImageModel(
     @Json(name = "copyright") val copyright: String = "",
@@ -16,4 +16,4 @@ data class ImageModel(
     @Json(name = "media_type") val mediaType: String = "",
     @Json(name = "title") val title: String = "",
     @Json(name = "url") val url: String = ""
-)
+) : Parcelable
