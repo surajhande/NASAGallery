@@ -25,7 +25,7 @@ class ImagesViewModel @Inject constructor(private val imageRepository: ImageRepo
     private val _imagesUiModel = MutableStateFlow(ImagesUiModel.Success() as ImagesUiModel)
     val imagesUiModel: StateFlow<ImagesUiModel> = _imagesUiModel
 
-    val isInfoVisible: MutableStateFlow<Boolean> = MutableStateFlow(false)
+    val isInfoVisible: MutableStateFlow<Boolean> = MutableStateFlow(true)
 
     private var imageList: ArrayList<ImageModel> = arrayListOf()
     var currentPosition = 0
